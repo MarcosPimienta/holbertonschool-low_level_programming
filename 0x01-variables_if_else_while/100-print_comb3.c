@@ -8,7 +8,7 @@
 
 int main(void)
 {
-int n = 0;
+int n = 1;
 int x = 2;
 
 while (n <= 89)
