@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
 * main - entry point
 *
@@ -8,14 +7,12 @@
 
 int main(void)
 {
-	char name[] = "Holberton";
-	int i = 0;
-
-	while (name[i] != '\0')
-	{
-	_putchar(name[i]);
-	i++;
-	}
-_putchar('\n')
+int i;
+char c[] = "Holberton";
+for (i = 0; i <= 8; i++)
+{
+_putchar(c[i]);
+}
+_putchar('\n');
 return (0);
 }
