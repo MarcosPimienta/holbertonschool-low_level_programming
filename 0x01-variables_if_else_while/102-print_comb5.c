@@ -1,48 +1,45 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
-*main-prints number 01 to 99
-*Return: 0
+* main - Entry point
+* Return: Always 0 (Success)
 */
 int main(void)
 {
-	int w = 0;
-	int x = 0;
-	int y = 0;
-	int z = 1;
+	int a, b, c, d, x;
 
-while (w <= 9)
-{
-	while (x <= 9)
+	for (a = 0; a <= 9; a++)
 	{
-		while (y <= 9)
+		for (b = 0; b <= 8; b++)
 		{
-			while (z <= 9)
+			for (c = a; c <= 9; c++)
 			{
-				putchar (w + '0');
-				putchar (x + '0');
-				putchar (' ');
-				putchar (y + '0');
-				putchar (z + '0');
-				if ((x != 9) || (y != 9) || (z != 9) || (w != 9))
+				if (a == c)
 				{
-				putchar (',');
-				putchar (' ');
+					x = b + 1;
 				}
-				z++;
+				else
+				{
+					x = 0;
+				}
+				for (d = x; d <= 9; d++)
+				{
+					putchar (a + '0');
+					putchar (b + '0');
+					putchar (' ');
+					putchar (c + '0');
+					putchar (d + '0');
+
+					if (a != 9 || b != 8 || c != 9 || d != 9)
+					{
+						putchar (',');
+						putchar (' ');
+					}
+				}
 			}
-			y++;
-			z = 0;
 		}
-		x++;
-		y = 0;
-		z = 0;
 	}
-		w++;
-		x = 0;
-		y = 0;
-		z = 0;
-}
-	putchar('\n');
-	return (0);
+putchar ('\n');
+return (0);
 }
