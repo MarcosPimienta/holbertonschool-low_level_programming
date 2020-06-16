@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-* main - its the main function
-* _putchar - prints characters
-*Return: Always 0 (Success)
+* main - entry point
+*
+* Return: Always 0 (Success)
 */
 
 int main(void)
@@ -16,5 +16,6 @@ int main(void)
 	_putchar(name[i]);
 	i++;
 	}
+_putchar('\n')
 return (0);
 }
