@@ -33,6 +33,7 @@ int n = 0;
 				{
 					_putchar (',');
 					_putchar (' ');
+					if ((n + h) < 10)
 					_putchar (' ');
 				}
 			}
