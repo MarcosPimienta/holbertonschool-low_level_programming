@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
-* main - check the code for Holberton School students.
-*
+* print_to_98 - print to 98.
+* @n: variable
 * Return: Always 0.
 */
 
