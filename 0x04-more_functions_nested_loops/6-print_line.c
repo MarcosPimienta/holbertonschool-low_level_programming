@@ -1,11 +1,10 @@
 #include "holberton.h"
-
 /**
-*print_line - return lines
+*print_line - print n lines
+*@i - variable
 *@n: - variable
 *Return: Always 0 (Success)
 */
-
 
 void print_line(int n)
 {
@@ -17,7 +16,7 @@ _putchar('\n');
 }
 else
 {
-for (i = 0; i <= n; i++)
+for (i = 1; i <= n; i++)
 {
 _putchar('_');
 }
