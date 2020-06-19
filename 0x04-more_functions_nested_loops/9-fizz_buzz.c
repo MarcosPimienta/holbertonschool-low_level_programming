@@ -30,7 +30,14 @@ int n = 0;
 		}
 		if ((i % 5 == 0) && (n == 0))
 		{
-			printf("Buzz ");
+			if (i == 100)
+			{
+			printf("Buzz");
+			}
+			else
+			{
+				printf("Buzz ");
+			}
 		}
 		n = 0;
 	}
