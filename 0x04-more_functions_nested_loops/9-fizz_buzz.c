@@ -40,5 +40,6 @@ int n = 0;
 		}
 		n = 0;
 	}
+printf("\n");
 return (0);
 }
