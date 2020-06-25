@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-*_strncat - prints string of even numnbers.
+*_strncpy - copy string of even numnbers.
 *@dest: string destination.
 *@src: string source.
 *@n:number of bytes for limiting.
