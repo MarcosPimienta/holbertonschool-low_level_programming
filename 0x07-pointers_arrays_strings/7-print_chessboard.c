@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
 * print_chessboard - compare strings and prints from the repeating string
-*@8: - Declaration of variable
+*@a: - Declaration of variable
 *Return: Always s for string
 */
 
