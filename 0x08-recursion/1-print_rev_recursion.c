@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* _puts_recursion - prints pointer string
+* _print_rev_recursion - prints pointer string in reverse
 *@s: - Declaration of variable
 *Return: Void
 */
