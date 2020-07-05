@@ -57,4 +57,5 @@ int _sqrt_recursion(int n);
 int auxFunc(int n, int x);
 int is_prime_number(int n);
 int auxPrime(int n, int x);
+int main(int argc, char **argv);
 #endif
