@@ -8,37 +8,34 @@
 *@argv: - Declaration of variable
 *Return: int
 */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i = 1;
-	int j;
-	int add;
-
+	int add = 0;
 	if (argc == 1)
 	{
 	puts("0");
 	return (0);
 	}
-	while (i < argc)
+	while (argc > 3)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
+
+		while (*argv)
 		{
-			if (isdigit(argv[i][j]) == 0)
+			if (isdigit(atoi((*argv))) == 0)
 			{
 				puts("Error");
 				return (1);
 			}
-			j++;
+		(*argv)++;
 		}
-	i++;
+	argv++;
 	}
-	for (i = 1; i < argc; i++)
+	while (argc && *argv)
 	{
-		add += atoi(argv[i]);
+
+		add += atoi((*argv));
+		argv++;
 	}
 	printf("%i\n", add);
-
 	return (0);
 }
