@@ -21,7 +21,7 @@ va_start(string, n);
 		while (i < n)
 		{
 			c = va_arg(string, char*);
-			if(c)
+			if (c)
 			{
 				printf("%s", c);
 				if (i < (n - 1))
