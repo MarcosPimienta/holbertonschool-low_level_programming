@@ -34,6 +34,8 @@ void print_all(const char * const format, ...)
 			}
 			printf("%s", str);
 			break;
+			default:
+			continue;
 		}
 			if (format[i])
 			{
