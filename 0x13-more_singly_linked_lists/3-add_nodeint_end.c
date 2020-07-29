@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * add_nodeint_end - add node at the end
+ * add_nodeint_end - add node before Null
  * @n: the integer added
  * @head: the first string in list
  * Return: pointer to function
