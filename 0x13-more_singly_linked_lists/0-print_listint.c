@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lists.h"
 /**
- * print_list - prints linked list
+ * print_listint - prints linked list elements number
  * @h: pointer to the head of the linked list
  * Return: number of elements.
  */
@@ -13,9 +13,9 @@ size_t print_listint(const listint_t *h)
 
 		while (h != NULL)
 		{
-				printf("%d\n", h->n);
-				h = h->next;
-				i++;
+			printf("%d\n", h->n);
+			h = h->next;
+			i++;
 		}
 		return (i);
 }
