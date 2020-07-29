@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lists.h"
 /**
- * listint_len - prints linked list elements number
+ * listint_len - prints length list elements number
  * @h: pointer to the head of the linked list
  * Return: number of elements.
  */
