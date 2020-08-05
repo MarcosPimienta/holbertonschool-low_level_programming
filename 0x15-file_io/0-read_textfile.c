@@ -29,8 +29,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	n_bytes = read(fd, buf, letters);
-	tmp = write(STDOUT_FILENO, buf, (ssize_t)n_bytes);
 	close(fd);
+	if (n_bytes == -1)
+	{
+	free(buf);
+	return (0);
+	}
+	tmp = write(STDOUT_FILENO, buf, (ssize_t)n_bytes);
 	if (tmp == -1)
 	{
 		free(buf);
@@ -38,8 +43,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	if (n_bytes != tmp)
 	{
-	return (0);
 	free(buf);
+	return (0);
 	}
 
 return (n_bytes);
