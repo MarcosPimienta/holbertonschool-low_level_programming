@@ -8,8 +8,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	int w, i = 0, cl;
+	int fd, w, i = 0, cl;
 
 	while (text_content && text_content[i])
 	{
