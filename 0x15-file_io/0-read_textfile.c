@@ -23,12 +23,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDWR);
 	if (fd == -1)
 	{
+		close(fd);
 		free(buf);
 		return (0);
 	}
 
 	n_bytes = read(fd, buf, letters);
 	tmp = write(STDOUT_FILENO, buf, (ssize_t)n_bytes);
+	close(fd);
 	if (tmp == -1)
 	{
 		free(buf);
@@ -39,8 +41,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 	free(buf);
 	}
-
-	close(fd);
 
 return (n_bytes);
 }
