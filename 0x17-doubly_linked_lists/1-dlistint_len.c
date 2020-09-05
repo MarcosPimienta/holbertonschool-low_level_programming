@@ -3,18 +3,23 @@
 #include <string.h>
 #include "lists.h"
 /**
- * print_dlistint - prints doublelinked list
+ * dlistint_len - prints doublelinked list length
  * @h: pointer to the head of the linked list
  * Return: number of elements.
  */
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	int i = 0;
 	const dlistint_t *temp = h;
 
 		while (temp)
 		{
-			printf("%d\n", temp->n);
+			if (!temp->next && !temp->prev)
+			{
+				printf("[0] (nil)\n");
+			}
+			else
+
 			temp = temp->next;
 			i++;
 		}
