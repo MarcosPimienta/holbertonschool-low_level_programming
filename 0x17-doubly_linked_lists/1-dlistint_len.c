@@ -14,12 +14,6 @@ size_t dlistint_len(const dlistint_t *h)
 
 		while (temp)
 		{
-			if (!temp->next && !temp->prev)
-			{
-				printf("[0] (nil)\n");
-			}
-			else
-
 			temp = temp->next;
 			i++;
 		}
