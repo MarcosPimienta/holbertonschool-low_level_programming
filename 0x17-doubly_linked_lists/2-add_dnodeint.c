@@ -6,7 +6,7 @@
 /**
 * add_dnodeint - adds node to list
 * @head: double pointer to the head of the linked list
-* @str: string to be duplicated.
+* @n: integer constant.
 * Return: number of elements.
 */
 
