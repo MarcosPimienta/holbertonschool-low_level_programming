@@ -3,8 +3,8 @@
 #include "lists.h"
 
 /**
-* free_list - function that
-* frees a list_t list.
+* free_dlistint - function that
+* frees a dlistint_t list.
 * @head: pointer to the head of the list
 * Return: void
 */
