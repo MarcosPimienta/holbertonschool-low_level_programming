@@ -4,9 +4,10 @@
 #include "lists.h"
 
 /**
-* add_dnodeint - adds node to list
-* *h: double pointer to the*h of the linked list
+* insert_dnodeint_at_index - adds node to list in the nth position
+* @h: double pointer to the*h of the linked list
 * @n: integer constant.
+* @idx: integer for the nth position.
 * Return: number of elements.
 */
 
@@ -19,13 +20,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newNode = malloc(sizeof(dlistint_t));
 
 	if (!newNode)
-	return NULL;
+	return (NULL);
 	newNode->n = n;
 
 	if (idx == 0)
 	{
 		newNode->next = (*h);
-		
+
 		if (*h)
 			(*h)->prev = newNode;
 		(*h) = newNode;
@@ -38,11 +39,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		i++;
 	}
 	if (!temp)
-		return NULL;
+		return (NULL);
 	newNode->prev = temp;
 	newNode->next = temp->next;
 	temp->next = newNode;
-	if(temp->next)
+	if (temp->next)
 		newNode->next->prev = newNode;
 	return (newNode);
 }
