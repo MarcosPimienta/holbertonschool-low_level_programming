@@ -5,7 +5,7 @@
 
 /**
 * add_dnodeint - adds node to list
-* @head: double pointer to the head of the linked list
+* *h: double pointer to the*h of the linked list
 * @n: integer constant.
 * Return: number of elements.
 */
@@ -13,31 +13,36 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *newNode;
-	dlistint_t *temp = h;
-	int i = 1;
-	int len = dlistint_len(h);
+	dlistint_t *temp = (*h);
+	unsigned int i = 0;
 
 	newNode = malloc(sizeof(dlistint_t));
 
-	if (idx > len)
-	{
+	if (!newNode)
 	return NULL;
-	}
-	else if (idx == 1)
+	newNode->n = n;
+
+	if (idx == 0)
 	{
-	add_dnodeint(&h, 0);
+		newNode->next = (*h);
+		
+		if (*h)
+			(*h)->prev = newNode;
+		(*h) = newNode;
+		newNode->prev = NULL;
+		return (newNode);
 	}
-	else
+	while (temp && i < idx - 1)
 	{
-		while (i < idx - 1)
-		{
-			temp = temp->next;
-			i++;
-		}
-		newNode->prev = temp;
-		newNode->next = temp->next;
-		temp->next = newNode;
+		temp = temp->next;
+		i++;
+	}
+	if (!temp)
+		return NULL;
+	newNode->prev = temp;
+	newNode->next = temp->next;
+	temp->next = newNode;
+	if(temp->next)
 		newNode->next->prev = newNode;
-	}
 	return (newNode);
 }
