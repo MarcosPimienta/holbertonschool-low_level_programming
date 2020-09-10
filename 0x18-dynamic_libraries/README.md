@@ -1,0 +1,1 @@
+Learning dynamic and static libraries
