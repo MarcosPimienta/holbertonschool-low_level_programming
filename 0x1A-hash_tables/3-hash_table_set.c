@@ -13,19 +13,19 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 
 	newNode = malloc(sizeof(hash_node_t));
 
-	if (!newNode)
+	if (newNode == NULL)
 	return (NULL);
 
-	newNode->value = strdup(value);
+	newNode->key = strdup(key);
 	if (!(newNode->value))
 		free(newNode);
-	newNode->value = strdup(key);
-	if (!(newNode->key))
-		free(newNode);
+	newNode->value = strdup(value);
+	if (!(newNode->value))
+		free(newNode->value);
 	newNode->next = *head;
 	*head = newNode;
 
-	return (newNode);
+	return (*head);
 }
 /**
  * hash_table_set - insert node at index
@@ -46,10 +46,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	k_i = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[k_i] != 0)
 	{
-		if (strcmp((ht->array[k_i]->key), key) == 0)
+		if ((strcmp(ht->array[k_i]->key, key)) == 0)
 		{
 			free(ht->array[k_i]->value);
-			ht->array[k_i]->value = strdup(value);
+			(ht->array[k_i])->value = strdup(value);
 			return (1);
 		}
 		else
