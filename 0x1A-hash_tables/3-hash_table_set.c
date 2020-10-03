@@ -44,13 +44,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[i] != 0)
 	{
 		if ((strcmp(ht->array[i]->key, key)) == 0)
-	{
-		free((ht->array[i])->value);
-		(ht->array[i])->value = strdup(value);
-		return (1);
-	}
-	else
-		add_node(&(ht->array[i]), key, value);
+		{
+			free((ht->array[i])->value);
+			(ht->array[i])->value = strdup(value);
+			return (1);
+		}
+		else
+			add_node(&(ht->array[i]), key, value);
 	}
 	else
 		add_node(&(ht->array[i]), key, value);
