@@ -38,15 +38,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int k_i = 0;
 
-	if ((ht->array) == NULL || ht->size == 0 || ht == NULL)
+	if (!(ht->array) || ht->size == 0 || !ht)
 		return (0);
-	if (strlen(key) == 0 || strlen(value) == 0 || (key) == NULL || (value) == NULL)
+	if (strlen(key) == 0 || strlen(value) == 0 || !(key) || !(value))
 		return (0);
 
 	k_i = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[k_i] != 0)
 	{
-		if (strcmp((ht->array[k_i]->value), value) == 0)
+		if (strcmp((ht->array[k_i]->key), key) == 0)
 		{
 			free(ht->array[k_i]->value);
 			ht->array[k_i]->value = strdup(value);
