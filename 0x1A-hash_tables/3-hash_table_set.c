@@ -1,62 +1,58 @@
 #include "hash_tables.h"
-/**
-* add_node - adds node to list
-* @head: double pointer to the head of the linked list
-* @key: string to be duplicated.
-* @value: string to be duplicated.
-* Return: number of elements.
-*/
 
+/**
+ * add_node- adds new node at the beginning of a linked list
+ * @head: The start of list
+ * @key: key
+ * @value: value
+ * Return: head of a node
+ */
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
-	hash_node_t *newNode;
+	hash_node_t *new_node;
 
-	newNode = malloc(sizeof(hash_node_t));
-
-	if (newNode == NULL)
-	return (NULL);
-
-	newNode->key = strdup(key);
-	if (!(newNode->value))
-		free(newNode);
-	newNode->value = strdup(value);
-	if (!(newNode->value))
-		free(newNode->value);
-	newNode->next = *head;
-	*head = newNode;
-
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->key = strdup(key);
+	if (new_node->key == NULL)
+		free(new_node->key);
+	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+		free(new_node->value);
+	new_node->next = *head;
+	*head = new_node;
 	return (*head);
 }
 /**
- * hash_table_set - insert node at index
- * @ht: hash table pointer
- * @key: string  with value pair
- * @value: value of key
- * Return: 1 for node added.
+ * hash_table_set - adds an element to the hash table
+ * @ht: hash node
+ * @key: The key of a data
+ * @value: value asociated to a key
+ * Return: 0 if fails, 1 if not
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int k_i = 0;
+	unsigned long int i = 0;
 
-	if (!(ht->array) || ht->size == 0 || !ht)
+	if (!key || !value || strlen(key) == 0 || strlen(value) == 0)
 		return (0);
-	if (strlen(key) == 0 || strlen(value) == 0 || !(key) || !(value))
+	if (!ht || !(ht->array) || ht->size == 0)
 		return (0);
-
-	k_i = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[k_i] != 0)
+	i = key_index((const unsigned char *)key, ht->size);
+	if (ht->array[i] != 0)
 	{
-		if ((strcmp(ht->array[k_i]->key, key)) == 0)
-		{
-			free(ht->array[k_i]->value);
-			(ht->array[k_i])->value = strdup(value);
-			return (1);
-		}
-		else
-			add_node(&(ht->array[k_i]), key, value);
+		if ((strcmp(ht->array[i]->key, key)) == 0)
+	{
+		free((ht->array[i])->value);
+		(ht->array[i])->value = strdup(value);
+		return (1);
 	}
 	else
-		add_node(&(ht->array[k_i]), key, value);
-
+		add_node(&(ht->array[i]), key, value);
+	}
+	else
+		add_node(&(ht->array[i]), key, value);
 	return (1);
 }
