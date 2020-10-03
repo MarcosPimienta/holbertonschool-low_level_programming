@@ -38,9 +38,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int k_i = 0;
 
-	if (!(ht->array) || ht->size == 0 || !ht)
+	if ((ht->array) == NULL || ht->size == 0 || ht == NULL)
 		return (0);
-	if (strlen(key) == 0 || strlen(value) == 0 || !(key) || !(value))
+	if (strlen(key) == 0 || strlen(value) == 0 || (key) == NULL || (value) == NULL)
 		return (0);
 
 	k_i = key_index((const unsigned char *)key, ht->size);
