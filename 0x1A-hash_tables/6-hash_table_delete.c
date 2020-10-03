@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_print - prints all elements of array
+ * hash_table_delete - deletes hash table
  * @ht: hash node
  * Return: 0 if fails, 1 if not
  */
